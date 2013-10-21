@@ -15,5 +15,15 @@ hoodang
 
 ###Release 1
 - Facebook Authentication, Sign up, in, out
-- Choose and view friends
+- See list of all users
 - Flag indicating available or not available
+
+###Release 2
+- Narrow view to only the friends you want to see
+- Make flag visible to your list
+- Communication to initate the hoodang (hanging out)
+
+###Possible Spikes/API's
+- Location, Google Maps API
+- Additional logins, Twitter etc.
+- Yelp for locations to chill
