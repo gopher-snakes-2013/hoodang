@@ -3,8 +3,8 @@ hoodang
 
 ### Social Local Social
 
-##Ability to sign in using an API of an existing/outside social network
-##choose friends from list, only friends from that list can see your signal that you're available to hang out
+#Ability to sign in using an API of an existing/outside social network
+#choose friends from list, only friends from that list can see your signal that you're available to hang out
 
 #Team Playas
 - JTR
