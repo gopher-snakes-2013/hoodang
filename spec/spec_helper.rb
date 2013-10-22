@@ -3,6 +3,4 @@ require 'capybara/rspec'
 require 'rubygems'
 require './app'
 
-def app
-  Sinatra::Application
-end
+Capybara.app =  Sinatra::Application
