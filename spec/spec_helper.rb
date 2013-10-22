@@ -1,6 +1,9 @@
+$LOAD_PATH.unshift(File.expand_path('.'))
+
+
 require 'rspec'
 require 'capybara/rspec'
 require 'rubygems'
-require './app'
+require 'app'
 
-Capybara.app =  Sinatra::Application
+Capybara.app = Sinatra::Application
