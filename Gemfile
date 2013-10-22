@@ -7,4 +7,5 @@ gem 'sinatra-activerecord'
 gem 'rspec'
 gem 'capybara'
 gem "shotgun"
+gem 'json'
 

@@ -1,0 +1,25 @@
+html, body {
+  background-color: #EEE;
+}
+#container {
+  width: 90%;
+  margin: 0px auto;
+  background-color: #FFF
+}
+
+.avatar, .flag {
+  border: 1px solid #555;
+  border-radius:10px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+}
+.available {
+  background-color: #C9F2B6;
+}
+
+.unavailable {
+  background-color: #F2B6B6;
+}
