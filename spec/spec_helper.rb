@@ -1,5 +1,7 @@
+require 'rspec'
+require 'capybara/rspec'
 require 'rubygems'
-require_relative './user.rb'
+require './app'
 
 def app
   Sinatra::Application
