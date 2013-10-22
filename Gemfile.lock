@@ -19,10 +19,39 @@ GEM
     arel (4.0.0)
     atomic (1.1.14)
     builder (3.1.4)
+    columnize (0.3.6)
+    debugger (1.6.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.4)
+    dotenv (0.9.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    hashie (2.0.5)
+    httpauth (0.2.0)
     i18n (0.6.5)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     minitest (4.7.5)
     multi_json (1.8.2)
+    multipart-post (1.2.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
@@ -52,6 +81,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  debugger
+  dotenv
+  omniauth-facebook
   rspec
   shotgun
   sinatra
