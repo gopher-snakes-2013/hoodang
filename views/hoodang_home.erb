@@ -4,9 +4,10 @@
   <div id="flag-container">
     <ul>
       <% @users.each do |user| %>
-      <li><img src="<%= user.image_url %>" alt="user image"></li>
-      <li><%= user.name %></li>
-      <li class="<%= user.status %>"></li>
+      <li class="<%= user.status %>">
+        <img src="<%= user.image_url %>" alt="user image">
+        <%= user.name %>
+      </li>
       <% end %>
     </ul>
   </div>
