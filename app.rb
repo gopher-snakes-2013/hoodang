@@ -41,8 +41,7 @@ get '/flag/:id' do
   # @user = User.find(params[:id])
   if request.xhr?
     p "AJAX"
-    num = true
-    rand(2) <= 0 ? num = false : num = true
+    num = [true,false].shuffle.first
     p num
     data = { id: params[:id], status: num }.to_json
     # data = { id: @user.id, status: @user.status }.to_json
