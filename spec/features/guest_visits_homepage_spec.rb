@@ -8,8 +8,9 @@ feature "Guest visits homepage" do
 
   scenario "they see sign in with Facebook button" do
     visit '/'
-    expect(page).to have_content('sign in')
+    expect(page).to have_content('sign up')
   end
+
 end
 
 
