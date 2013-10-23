@@ -4,7 +4,14 @@ ruby "1.9.3"
 
 gem 'sinatra'
 gem 'sinatra-activerecord'
-gem 'rspec'
-gem 'capybara'
-gem "shotgun"
+gem 'omniauth'
+gem 'omniauth-facebook'
 
+group :development, :test do
+  gem 'debugger'
+  gem "shotgun"
+  gem 'rspec'
+  gem 'capybara'
+  gem 'dotenv'
+
+end
