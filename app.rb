@@ -11,17 +11,21 @@ Dotenv.load
 
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/hoodang_development')
 
-configure do 
+configure do
   enable :sessions
 
-  use OmniAuth::Builder do 
+  use OmniAuth::Builder do
     provider :facebook, ENV['APP_ID'], ENV['APP_SECRET']
   end
 end
 
-helpers do 
+helpers do
   def get_all_users
     @users = User.all
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id])
   end
 end
 
@@ -31,7 +35,8 @@ end
 
 get '/auth/facebook/callback' do
   user = env['omniauth.auth']
-  User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'unavailable')
+  new_user = User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'unavailable')
+  session[:user_id] = new_user.id
   redirect '/welcome'
 end
 
