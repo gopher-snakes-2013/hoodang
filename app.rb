@@ -25,7 +25,7 @@ end
 
 get '/auth/facebook/callback' do
   user = env['omniauth.auth']
-  User.create(name: user.info.name, email: user.info.email, status: 'false')
+  User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'false')
   redirect '/welcome'
 end
 
