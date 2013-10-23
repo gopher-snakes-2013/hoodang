@@ -1,29 +1,20 @@
 $(document).ready(function(){
-  var updateFlag = function(obj){
-    var item = $('#user-'+obj.id);
-    if(obj.status){
-      item.removeClass('unavailable').addClass('available');
-    } else {
-      item.removeClass('available').addClass('unavailable');
-    }
+
+  var updateStatus = function() {
+    $('#friend-list li').click(function(event){
+      switchKlassOfElement(event.target, event.target.className);
+    });
   };
 
-  $('#flag-container li').on('click', function(){
-    var uid = (this.id).replace(/user-/gi,"");
-    console.log(uid);
-    $.ajax({
-      type:'get',
-      url: '/flag/' + uid,
-      dataType: 'json'
-    }).done(function(response) {
-      console.log(response);
-      updateFlag(response);
-    }).fail(function(response){
-      console.log("FAIL");
-      console.log(response);
-    });
+  function switchKlassOfElement (element, availability) {
+    if (availability === "status-available"){
+      $(element).removeClass('status-available').addClass('status-unavailable');
+    }
+    else {
+      $(element).removeClass('status-unavailable').addClass('status-available');
+    }
+  }
 
-  });
-
+  updateStatus();
 
 });

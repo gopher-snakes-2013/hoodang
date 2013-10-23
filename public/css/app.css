@@ -39,10 +39,10 @@ html, body {
   background-size: 150%;
 
 }
-.available {
+.status-available {
   background-color: #C9F2B6;
 }
 
-.unavailable {
+.status-unavailable {
   background-color: #F2B6B6;
 }
