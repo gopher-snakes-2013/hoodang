@@ -44,5 +44,7 @@ html, body {
 }
 
 .unavailable {
+  padding: 4px;
+  border-radius: 2px;
   background-color: #F2B6B6;
 }
