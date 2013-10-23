@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'json'
 
 group :development, :test do
   gem 'debugger'
@@ -13,5 +14,4 @@ group :development, :test do
   gem 'rspec'
   gem 'capybara'
   gem 'dotenv'
-
 end
