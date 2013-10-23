@@ -3,9 +3,38 @@
   <div id="header"><img class="avatar" /></div>
   <div id="flag-container">
     <ul>
-      <li id="user-1" class="flag available">Username 1</li>
-      <li id="user-2" class="flag unavailable">Username 2</li>
-      <li id="user-3" class="flag available">Username 3</li>
-      <li id="user-4" class="flag available">Username 4</li>
+      <% @users.each do |user| %>
+      <li class="<%= user.status %>">
+        <img src="<%= user.image_url %>" alt="user image">
+        <%= user.name %>
+      </li>
+      <% end %>
+    </ul>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <li id="user-1" class="flag available">Username 1</li>
+      <li id="user-2" class="flag unavailable">Username 2</li>
+      <li id="user-3" class="flag available">Username 3</li>
+      <li id="user-4" class="flag available">Username 4</li> -->
