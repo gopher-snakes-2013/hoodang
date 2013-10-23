@@ -1,11 +1,14 @@
 require 'omniauth'
 require 'omniauth-facebook'
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'dotenv'
 require 'debugger'
 require 'json'
 
 Dotenv.load
+
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/hoodang_development')
 
 configure do 
   enable :sessions

@@ -7,6 +7,7 @@ gem 'sinatra-activerecord'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'json'
+gem 'pg'
 
 group :development, :test do
   gem 'debugger'
