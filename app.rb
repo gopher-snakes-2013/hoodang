@@ -12,10 +12,15 @@ get '/welcome' do
   erb :hoodang_home
 end
 
-get 'flag/:user' do
-  #when i have a model return the status of the params[:user]'s flag via get or AJAX
-  @status = true
+get '/flag/:id' do
+  #when i have a model return the status of the params[:id]'s flag via 'get' or AJAX
+  # @user = User.find(params[:id])
   if request.xhr?
-    data = { status: true }.to_json
+    p "AJAX"
+    num = true
+    rand(2) <= 0 ? num = false : num = true
+    p num
+    data = { id: params[:id], status: num }.to_json
+    # data = { id: @user.id, status: @user.status }.to_json
   end
 end
