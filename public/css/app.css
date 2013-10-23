@@ -1,0 +1,48 @@
+html, body {
+  background-color: #EEE;
+  position: relative;
+}
+
+#container {
+  width: 400px;
+  margin: 15px auto;
+  background-color: #FFF;
+}
+
+#toolbar {
+  background: rgb(238,238,238); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+  padding: 5px 10px;
+}
+
+
+#header {
+  text-align: center;
+}
+
+.avatar, .flag {
+  border: 1px solid #555;
+  border-radius:7px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background: url('http://www.austintexas.gov/sites/default/files/files/Animal_Services/cute-kitten-playing.jpg') no-repeat center;
+  background-size: 150%;
+
+}
+.available {
+  background-color: #C9F2B6;
+}
+
+.unavailable {
+  background-color: #F2B6B6;
+}
