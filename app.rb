@@ -19,18 +19,25 @@ configure do
   end
 end
 
+helpers do 
+  def get_all_users
+    @users = User.all
+  end
+end
+
+
 get '/' do
   erb :index
 end
 
 get '/auth/facebook/callback' do
   user = env['omniauth.auth']
-  User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'false')
+  User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'unavailable')
   redirect '/welcome'
 end
 
 get '/welcome' do
-  #once there's a Model we'll need an instance variable here.
+  get_all_users
   erb :hoodang_home
 end
 
