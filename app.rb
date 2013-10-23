@@ -8,7 +8,9 @@ require 'json'
 
 Dotenv.load
 
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/hoodang_development')
+LOCAL_DATABASE_LOCATION = 'postgres://localhost/hoodang_development'
+
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || LOCAL_DATABASE_LOCATION)
 
 configure do 
   enable :sessions
