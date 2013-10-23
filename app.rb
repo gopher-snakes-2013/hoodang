@@ -5,6 +5,7 @@ require 'sinatra/activerecord'
 require 'dotenv'
 require 'debugger'
 require 'json'
+require './models/user'
 
 Dotenv.load
 
@@ -25,8 +26,9 @@ get '/' do
 end
 
 get '/auth/facebook/callback' do
-  env['omniauth.auth']
-  "Hello World"
+  user = env['omniauth.auth']
+  User.create(name: user.info.name, email: user.info.email, status: 'false')
+  redirect '/welcome'
 end
 
 get '/welcome' do
