@@ -12,9 +12,6 @@ $(document).ready(function(){
 
   var updateUserStatus = function(UserIdStatus){
     var user = $('li#' + UserIdStatus.id);
-    console.log(user);
-    console.log(UserIdStatus.status);
-    console.log(UserIdStatus.status === 'unavaialable');
     if(UserIdStatus.status === "unavailable"){
       user.removeClass('available').addClass('unavailable');
     } else {
