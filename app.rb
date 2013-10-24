@@ -25,12 +25,21 @@ helpers do
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    begin
+      @current_user ||= User.find(session[:user_id])
+    rescue
+      redirect '/'
+    end
   end
 end
 
 get '/' do
   erb :index
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
 get '/auth/facebook/callback' do
