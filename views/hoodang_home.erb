@@ -1,5 +1,9 @@
 <div id="container">
-  <div id="toolbar"><a href="/">home</a></div>
+  <div id="toolbar"><a href="/">home</a>
+    <% if @current_user %>
+      <a href="/logout">logout</a>
+    <% end %>
+  </div>
   <div id="header"><img class="avatar" /></div>
   <div id="flag-container">
     <ul>
