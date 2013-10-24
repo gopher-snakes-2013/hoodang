@@ -4,7 +4,14 @@
       <a href="/logout">logout</a>
     <% end %>
   </div>
-  <div id="header"><img class="avatar" /></div>
+  <div id="header">
+    <img class="avatar" />
+    <% if @current_user.status %>
+      <div id="btn-flag-lower"></div>
+    <% else %>
+      <div id="btn-flag-raise"></div>
+    <% end %>
+  </div>
   <div id="flag-container">
     <ul>
       <% @users.each do |user| %>
