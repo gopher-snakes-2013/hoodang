@@ -35,12 +35,17 @@ end
 
 get '/auth/facebook/callback' do
   user = env['omniauth.auth']
-  new_user = User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'unavailable')
-  session[:user_id] = new_user.id
+  current_user = User.find_by_email(user.info.email);
+  if current_user == nil
+    current_user = User.create(name: user.info.name, email: user.info.email, image_url: user.info.image, status: 'unavailable')
+  end
+  current_user.id
+  session[:user_id] = current_user.id
   redirect '/welcome'
 end
 
 get '/welcome' do
+  current_user
   get_all_users
   erb :hoodang_home
 end
