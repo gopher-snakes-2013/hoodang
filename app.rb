@@ -6,7 +6,7 @@ require 'debugger'
 require 'json'
 require './models/user'
 
-begin 
+begin
   require 'dotenv'
   Dotenv.load
 rescue LoadError
@@ -44,7 +44,7 @@ put '/user/:id/:status' do
 
   p params
   @user_to_be_updated = User.find(params[:id])
-  
+
   case params[:status]
     when "available"
       @user_to_be_updated.status = "unavailable"
@@ -53,6 +53,8 @@ put '/user/:id/:status' do
   end
   @user_to_be_updated.save
   {id: @user_to_be_updated.id, status: @user_to_be_updated.status}.to_json
+end
+
 
 get '/logout' do
   session.clear
