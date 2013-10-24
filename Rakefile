@@ -7,8 +7,6 @@ task 'console' do
   exec 'irb -r ./app.rb'
 end
 
-
-
 desc "create the database"
 task "db:create" do
   %x(createdb hoodang_development)

@@ -1,28 +1,22 @@
 $(document).ready(function(){
-  var updateFlag = function(obj){
-    var item = $('#user-'+obj.id);
-    if(obj.status){
-      item.removeClass('unavailable').addClass('available');
-    } else {
-      item.removeClass('available').addClass('unavailable');
-    }
-  };
 
-  $('#flag-container li').on('click', function(){
-    var uid = (this.id).replace(/user-/gi,"");
-    console.log(uid);
+  $('#flag-container li').on('click', function(){    
     $.ajax({
-      type:'get',
-      url: '/flag/' + uid,
+      type: 'put',
+      url:  '/user/' + this.id + '/' + this.className,
       dataType: 'json'
     }).done(function(response) {
-      console.log(response);
-      updateFlag(response);
-    }).fail(function(response){
-      console.log("FAIL");
-      console.log(response);
+      updateUserStatus(response);
     });
-
   });
+
+  var updateUserStatus = function(UserIdStatus){
+    var user = $('li#' + UserIdStatus.id);
+    if(UserIdStatus.status === "unavailable"){
+      user.removeClass('available').addClass('unavailable');
+    } else {
+      user.removeClass('unavailable').addClass('available');
+    }
+  };
 
 });
