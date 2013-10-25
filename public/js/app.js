@@ -6,8 +6,6 @@ $(document).ready(function(){
       url:  '/user/' + this.id + '/' + getStatusClass(this),
       dataType: 'json'
     }).done(function(response) {
-      console.log("THIS in the callback:" + $(this));
-      console.log(response);
       updateUserStatus(response, 'img');
     });
   });
@@ -30,7 +28,7 @@ $(document).ready(function(){
     } else {
       var user = $('li#' + UserIdStatus.id);
     }
-    console.log(user);
+    
     if(UserIdStatus.status === "unavailable"){
       user.removeClass('available').addClass('unavailable');
     } else {
