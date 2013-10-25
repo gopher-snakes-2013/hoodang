@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-  $('#flag-container li').on('click', function(){    
+  var removeCreateHoodangButton = function() {
+    $('#party').remove();
+  };
+
+  $('#flag-container li').on('click', function(){
     $.ajax({
       type: 'put',
       url:  '/user/' + this.id + '/' + this.className,
@@ -18,5 +22,19 @@ $(document).ready(function(){
       user.removeClass('unavailable').addClass('available');
     }
   };
+
+  $('#party').click(function(event){
+    event.preventDefault();
+    removeCreateHoodangButton(); // {removeCreateHoodangButton}removes the button so that we don't get multiple drop-boxes
+    $('.drop-box').append('<img src="http://plaink8.web.unc.edu/files/2011/11/aww.jpg"/>');
+    $('.drop-box').append('<h3> Drag-In Friends that you would be down to Hoodang with :) </h3>');
+  });
+
+  $('.drop-box').on('click', 'img', function(event){
+    event.preventDefault();
+    console.log("WASSUP");
+    console.log(event);
+
+  });
 
 });

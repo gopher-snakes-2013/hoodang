@@ -27,3 +27,15 @@ hoodang
 - Location, Google Maps API
 - Additional logins, Twitter etc.
 - Yelp for locations to chill
+
+-------------------------
+
+To Run on Your Local Machine:
+1) Bundle
+2) Create .env file and input facebook
+  APP_ID = ___________
+  APP_SECRET = __________
+3) Create Database:
+  createdb hoodang_development
+4) Run Migrations:
+  rake db:migrate
