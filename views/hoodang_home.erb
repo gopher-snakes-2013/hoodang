@@ -12,7 +12,7 @@
     <ul>
       <% @users.each do |user| %>
         <% if user.id != @current_user.id %>
-        <li id="user-<%= user.id %>" class="<%= user.status %>">
+        <li id="<%= user.id %>" class="<%= user.status %>">
           <img src="<%= user.image_url %>" alt="user image">
           <%= user.name %>
         </li>
