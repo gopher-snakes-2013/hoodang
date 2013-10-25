@@ -1,17 +1,36 @@
 $(document).ready(function(){
 
-  $('#flag-container li').on('click', function(){    
+  $('#header img.avatar').on('click', function(){    
     $.ajax({
       type: 'put',
-      url:  '/user/' + this.id + '/' + this.className,
+      url:  '/user/' + this.id + '/' + getStatusClass(this),
       dataType: 'json'
     }).done(function(response) {
-      updateUserStatus(response);
+      console.log("THIS in the callback:" + $(this));
+      console.log(response);
+      updateUserStatus(response, 'img');
     });
   });
 
-  var updateUserStatus = function(UserIdStatus){
-    var user = $('li#' + UserIdStatus.id);
+  // A helper funtion to scour the classes of the given
+  // DOM object and return one of the relavant classes
+  var getStatusClass = function(elm){
+    if ($(elm).hasClass('available')){
+      return "available";
+    } else if ($(elm).hasClass('unavailable')) {
+      return "unavailable";
+    } else {
+      return "";
+    }
+  };
+
+  var updateUserStatus = function(UserIdStatus, tag){
+    if (tag == 'img'){
+      var user = $('img#' + UserIdStatus.id);
+    } else {
+      var user = $('li#' + UserIdStatus.id);
+    }
+    console.log(user);
     if(UserIdStatus.status === "unavailable"){
       user.removeClass('available').addClass('unavailable');
     } else {

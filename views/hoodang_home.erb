@@ -4,11 +4,12 @@
       <a href="/logout">logout</a>
     <% end %>
   </div>
-  <div id="header"><img class="avatar" /></div>
+  <!--NOTE: the @users[0] in the next line only works becasue there's only one person in the database !-->
+  <div id="header"><img id="<%= @current_user.id %>" class="avatar <%= @current_user.status %>" /></div>
   <div id="flag-container">
     <ul>
       <% @users.each do |user| %>
-      <li id="<%= user.id %>" class="<%= user.status %>">
+      <li id="user-<%= user.id %>" class="<%= user.status %>">
         <img src="<%= user.image_url %>" alt="user image">
         <%= user.name %>
       </li>

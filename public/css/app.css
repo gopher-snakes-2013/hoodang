@@ -26,25 +26,28 @@ html, body {
   text-align: center;
 }
 
-.avatar, .flag {
-  border: 1px solid #555;
-  border-radius:7px;
-}
-
 .avatar {
+  border: 1px solid #555;
+  border-radius:200px;
   width: 200px;
   height: 200px;
   margin: 10px;
   background: url('http://www.austintexas.gov/sites/default/files/files/Animal_Services/cute-kitten-playing.jpg') no-repeat center;
   background-size: 150%;
-
 }
+
+#flag-container li {
+  padding: 4px;
+  border-radius: 2px;
+   
+}
+
+img.avatar.available { box-shadow: 0px 0px 0px 20px #C9F2B6; }
 .available {
   background-color: #C9F2B6;
 }
 
+img.avatar.unavailable{ box-shadow: 0px 0px 0px 20px #F2B6B6; }
 .unavailable {
-  padding: 4px;
-  border-radius: 2px;
   background-color: #F2B6B6;
 }
