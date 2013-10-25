@@ -4,11 +4,11 @@
       <a href="/logout">logout</a>
     <% end %>
   </div>
-  <div id="header"><img class="avatar" /></div>
+  <div id="header"><img id="<%= @current_user.id %>" class="avatar <%= @current_user.status %>" /></div>
   <div id="flag-container">
     <ul>
       <% @users.each do |user| %>
-      <li id="<%= user.id %>" class="<%= user.status %>">
+      <li id="user-<%= user.id %>" class="<%= user.status %>">
         <img src="<%= user.image_url %>" alt="user image">
         <%= user.name %>
       </li>
