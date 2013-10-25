@@ -77,3 +77,10 @@ get '/welcome' do
   get_all_users
   erb :hoodang_home
 end
+
+post '/check_updates' do
+  p params[:u_ids]
+  if request.xhr?
+    get_all_users.to_json
+  end
+end

@@ -23,11 +23,7 @@ $(document).ready(function(){
   };
 
   var updateUserStatus = function(UserIdStatus, tag){
-    if (tag == 'img'){
-      var user = $('img#' + UserIdStatus.id);
-    } else {
-      var user = $('li#' + UserIdStatus.id);
-    }
+    var user = $( tag + '#' + UserIdStatus.id);
     
     if(UserIdStatus.status === "unavailable"){
       user.removeClass('available').addClass('unavailable');
@@ -35,5 +31,22 @@ $(document).ready(function(){
       user.removeClass('unavailable').addClass('available');
     }
   };
+
+  var updateListStatus = function(){
+    $.ajax({
+      type: 'post',
+      dataType: 'json',
+      url: '/check_updates',
+      data: "u_ids=2,3"
+    }).done(function(response){
+      var fullList = response;
+      console.log(fullList);
+    }).fail(function(response){
+      console.log("FAIL: " + response);
+    });
+
+  };
+
+  $('#btn').on('click', updateListStatus);
 
 });
